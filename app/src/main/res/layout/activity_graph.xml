@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.tashambra.mobileapp.MainActivity"
+    android:background="#339cff">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="368dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/container"
+    android:gravity="center"
+
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your current BAC is: "
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="20dp"
+            android:textColor="#eafdff"
+            android:textStyle="bold"
+            android:paddingBottom="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/graph_text_view"
+            android:textColor="#ff4d4d"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text=""/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:background="@drawable/layout_border">
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/graph" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_layout"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Beer"
+            android:id="@+id/beer_button"/>
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Wine"
+            android:id="@+id/wine_button"/>
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="SHOTS"
+            android:id="@+id/shots_button"/>
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="My Drinks"
+            android:id="@+id/my_drinks_button"/>
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="ADD NEW"
+            android:id="@+id/add_new_drink_button"/>
+
+    </LinearLayout>
+</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

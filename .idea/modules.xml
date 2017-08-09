@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GraphApp/GraphApp.iml" filepath="$PROJECT_DIR$/GraphApp/GraphApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subProject/GraphLibrary/GraphLibrary.iml" filepath="$PROJECT_DIR$/subProject/GraphLibrary/GraphLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MobileApp.iml" filepath="$PROJECT_DIR$/MobileApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subProject/subProject.iml" filepath="$PROJECT_DIR$/subProject/subProject.iml" />
+    </modules>
+  </component>
+</project>

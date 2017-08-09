@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/bkoirlal/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/MobileApp/app/build/intermediates/pre-dexed/debug/gson-2.7_a7fbe422c3eb2faae0f487a4e510d56027eede32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bkoirlal/Documents/mobileApp/tashproj/MobileApp/subProject/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="7f9b4cea08dbb07fbdbef3dc46b3642823545ac3">
+        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/MobileApp/app/build/intermediates/pre-dexed/debug/classes_dbfcaa3cf20fadca215688e3d032e06296326f80.jar" />
+    </item>
+
+</items>
