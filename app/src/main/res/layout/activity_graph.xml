@@ -1,96 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.tashambra.mobileapp.MainActivity"
-    android:background="#339cff">
-
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="368dp"
-    android:layout_height="wrap_content"
-    android:id="@+id/container"
-    android:gravity="center"
-
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent">
+    android:background="@color/colorPrimary">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:id="@+id/container"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your current BAC is: "
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="20dp"
-            android:textColor="#eafdff"
-            android:textStyle="bold"
-            android:paddingBottom="20dp"/>
+            android:orientation="horizontal">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your current BAC is: "
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="20dp"
+                android:textColor="#eafdff"
+                android:textStyle="bold"
+                android:paddingBottom="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/graph_text_view"
+                android:textColor="#ff4d4d"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/graph_text_view"
-            android:textColor="#ff4d4d"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:text=""/>
-
+            android:layout_height="200dip"
+            android:background="@drawable/layout_border">
+            <com.jjoe64.graphview.GraphView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/graph" />
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dip"
-        android:background="@drawable/layout_border">
-        <com.jjoe64.graphview.GraphView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/graph" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.sa90.materialarcmenu.ArcMenu
+        android:id="@+id/arcMenu"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_layout"
-        android:gravity="center">
+        android:layout_gravity="bottom|end"
+        app:menu_open="arc_left"
+        app:menu_scr="@drawable/ic_add"
+        app:menu_color="@color/colorPrimaryDark"
+        >
 
-        <Button
+
+
+        <android.support.design.widget.FloatingActionButton
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:text="Beer"
-            android:id="@+id/beer_button"/>
+            android:id="@+id/beer_button"
+            android:src="@drawable/beer_bottle"
+            app:menu_color="@color/colorPrimaryDark"
 
-        <Button
+            app:fabSize="mini"/>
+
+
+        <android.support.design.widget.FloatingActionButton
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:text="Wine"
-            android:id="@+id/wine_button"/>
+            android:id="@+id/wine_button"
+            android:src="@drawable/wine_glass"
+            app:menu_color="@color/colorPrimaryDark"
 
-        <Button
+            app:fabSize="mini"/>
+
+        <android.support.design.widget.FloatingActionButton
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="SHOTS"
-            android:id="@+id/shots_button"/>
-        <Button
+            android:id="@+id/shots_button"
+            android:src="@drawable/shot_glass"
+            app:menu_color="@color/colorPrimaryDark"
+
+            app:fabSize="mini"/>
+
+        <android.support.design.widget.FloatingActionButton
             android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="My Drinks"
-            android:id="@+id/my_drinks_button"/>
-        <Button
+            android:id="@+id/my_drinks_button"
+            app:menu_color="@color/colorPrimaryDark"
+
+            app:fabSize="mini"/>
+
+        <android.support.design.widget.FloatingActionButton
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="ADD NEW"
-            android:id="@+id/add_new_drink_button"/>
+            android:id="@+id/add_new_drink_button"
+            app:menu_color="@color/colorPrimaryDark"
 
-    </LinearLayout>
-</LinearLayout>
+            app:fabSize="mini"/>
 
-</android.support.constraint.ConstraintLayout>
+    </com.sa90.materialarcmenu.ArcMenu>
+</FrameLayout>

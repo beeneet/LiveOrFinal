@@ -33,6 +33,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(path: ':subProject')
     compile 'com.google.code.gson:gson:2.7'
+    compile 'com.sa90.materialarcmenu:library:1.5.0'
 
 
 }

@@ -2,59 +2,82 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#212121"
+    android:weightSum="1">
+    <!--<View-->
+    <!--android:id="@+id/opacityFilter"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!---->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:alpha="13">-->
+    <!--</View>-->
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/drink_name_edit_text"
         android:gravity="center"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:textSize="20dp"
+        android:textColor="#ffffff"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/drink_name_text_view"
         android:gravity="center"
-        android:text="TEST"/>
+        android:text="TEST"
+        android:textColor="#ffffff"/>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alcohol Percent(%)"
-            android:layout_margin="50dp"/>
-
+            android:paddingLeft="49dp"
+            android:paddingTop="24dp"
+            android:text="Alcohol %"
+            android:textColor="#ffffff" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_margin="50dp"
-            android:id="@+id/alcoholp_edit_text"/>
+            android:layout_marginLeft="50dp"
+            android:inputType="number"
+            android:id="@+id/alcoholp_edit_text"
+            android:textColor="#ffffff"/>
 
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="49dp"
+            android:paddingTop="24dp"
             android:text="Volume"
-            android:layout_margin="50dp"/>
-
+            android:textColor="#ffffff" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_margin="50dp"
-            android:id="@+id/volume_edit_text"/>
+            android:layout_marginLeft="50dp"
+            android:inputType="number"
+            android:id="@+id/volume_edit_text"
+            android:textColor="#ffffff"/>
 
     </LinearLayout>
 
@@ -65,36 +88,40 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time since"
-            android:layout_margin="50dp"/>
+            android:paddingLeft="49dp"
+            android:paddingTop="24dp"
+            android:text="Time Elapsed"
+            android:textColor="#ffffff" />
 
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_margin="50dp"
-            android:id="@+id/time_edit_text"/>
+            android:layout_marginLeft="50dp"
+            android:inputType="number"
+            android:id="@+id/time_edit_text"
+            android:textColor="#ffffff"/>
 
     </LinearLayout>
 
     <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:gravity="center">-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center">-->
 
-        <!--<Button-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/ok_button"-->
-            <!--android:text="OK"-->
-            <!--android:layout_margin="40dp"/>-->
+    <!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/ok_button"-->
+    <!--android:text="OK"-->
+    <!--android:layout_margin="40dp"/>-->
 
 
-        <!--<Button-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/cancel_button"-->
-            <!--android:text="CANCEL"/>-->
+    <!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/cancel_button"-->
+    <!--android:text="CANCEL"/>-->
 
 
     <!--</LinearLayout>-->

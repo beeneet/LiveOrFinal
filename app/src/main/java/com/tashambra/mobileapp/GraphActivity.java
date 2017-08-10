@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -41,6 +42,7 @@ public class GraphActivity extends Fragment{
     private Runnable mTimer2;
     private TextView mGraphTextView;
     private LineGraphSeries<DataPoint> mSeries2;
+    private LineGraphSeries<DataPoint> mSeries3;
     private double graph2LastXValue = 5d;
 
     private double mBACvalue;
@@ -50,11 +52,11 @@ public class GraphActivity extends Fragment{
     private double AlcoholVolume;
     private double TimePassed;
     private long initialTime;
-    private Button mBeerButton;
-    private Button mWineButton;
-    private Button mShotsButton;
-    private Button mMyDrinksButton;
-    private Button mAddNewDrinkButton;
+    private FloatingActionButton mBeerButton;
+    private FloatingActionButton mWineButton;
+    private FloatingActionButton mShotsButton;
+    private FloatingActionButton mMyDrinksButton;
+    private FloatingActionButton mAddNewDrinkButton;
     private static double prevVal = 0.0;
     List<Drink> myDrinksList = new ArrayList<>();
 
@@ -70,7 +72,7 @@ public class GraphActivity extends Fragment{
         mGraphTextView = (TextView) v.findViewById(R.id.graph_text_view);
 
         //Buttons FABs to be
-        mBeerButton = (Button) v.findViewById(R.id.beer_button);
+        mBeerButton = (FloatingActionButton) v.findViewById(R.id.beer_button);
         mBeerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,7 +80,7 @@ public class GraphActivity extends Fragment{
             }
         });
 
-        mWineButton = (Button) v.findViewById(R.id.wine_button);
+        mWineButton = (FloatingActionButton) v.findViewById(R.id.wine_button);
         mWineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,7 +88,7 @@ public class GraphActivity extends Fragment{
             }
         });
 
-        mShotsButton = (Button) v.findViewById(R.id.shots_button);
+        mShotsButton = (FloatingActionButton) v.findViewById(R.id.shots_button);
         mShotsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,7 +96,7 @@ public class GraphActivity extends Fragment{
             }
         });
 
-        mAddNewDrinkButton = (Button) v.findViewById(R.id.add_new_drink_button);
+        mAddNewDrinkButton = (FloatingActionButton) v.findViewById(R.id.add_new_drink_button);
         mAddNewDrinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,7 +104,7 @@ public class GraphActivity extends Fragment{
             }
         });
 
-        mMyDrinksButton = (Button) v.findViewById(R.id.my_drinks_button);
+        mMyDrinksButton = (FloatingActionButton) v.findViewById(R.id.my_drinks_button);
         mMyDrinksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,10 +128,13 @@ public class GraphActivity extends Fragment{
         mGraphTextView.setShadowLayer(3,3,3,Color.BLACK);
         final GraphView graph = (GraphView) v.findViewById(R.id.graph);
         mSeries2 = new LineGraphSeries<>();
-        graph.setBackgroundColor(Color.parseColor("#80d4ff"));
+        mSeries3 = new LineGraphSeries<>();
+        graph.setBackgroundColor(Color.parseColor("#a7aeba"));
         mSeries2.setThickness(10);
         graph.addSeries(mSeries2);
         graph.getViewport().setXAxisBoundsManual(true);
+        graph.addSeries(mSeries3);
+        mSeries3.appendData(new DataPoint(0,0.08), true, 10000);
 
         mTimer2 = new Runnable() {
             @Override
@@ -137,6 +142,7 @@ public class GraphActivity extends Fragment{
                 mGraphTextView.setShadowLayer(3,3,3,Color.BLACK);
                 graph2LastXValue = (System.currentTimeMillis()-initialTimeFinal)/1000;
                 mSeries2.appendData(new DataPoint(graph2LastXValue, getBAC()), true, 10000);
+                mSeries3.appendData(new DataPoint(graph2LastXValue,0.08), true, 10000);
                 graph.getViewport().setMinX(0);
                 graph.getViewport().setMaxX(graph2LastXValue);
                 graph.getViewport().setMinY(0);
@@ -451,9 +457,9 @@ public class GraphActivity extends Fragment{
             mDrinkName = (TextView) rowView.findViewById(R.id.user_drinkname);
             mDrinkVolume = (TextView) rowView.findViewById(R.id.user_volume);
             mDrinkAlcoholPercent = (TextView) rowView.findViewById(R.id.user_alcoholpercent);
-            mDrinkName.setText(drink.getName());
-            mDrinkVolume.setText(String.valueOf(drink.getVolume()));
-            mDrinkAlcoholPercent.setText(String.valueOf(drink.getAlcoholPercent()));
+            mDrinkName.setText(drink.getName().toUpperCase());
+            mDrinkVolume.append(String.valueOf(drink.getVolume()));
+            mDrinkAlcoholPercent.append(String.valueOf(drink.getAlcoholPercent()));
             return rowView;
         }
     }

@@ -12,6 +12,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/bkoirlal/Documents/mobileApp/tashproj/MobileApp2/LiveOR/subProject/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="7f9b4cea08dbb07fbdbef3dc46b3642823545ac3">
+        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/MobileApp2/LiveOR/app/build/intermediates/pre-dexed/debug/classes_4232ae9ed95afaf9275df7d4575cb7cb5181303c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/bkoirlal/.android/build-cache/426ca4dd1b379287a55a4b822a835311a76b492c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="60a7395de373ab991276237d40857092bb1be3da">
+        <dex dex="/Users/bkoirlal/Documents/mobileApp/tashproj/MobileApp2/LiveOR/app/build/intermediates/pre-dexed/debug/classes_97016c97a2ae6e7e1a3c3a2156e90747b032cf31.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/bkoirlal/Documents/mobileApp/tashproj/MobileApp/subProject/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
